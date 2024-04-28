@@ -1,6 +1,3 @@
-import textwrap
-
-
 def menu():
     print(
         '''
@@ -46,7 +43,7 @@ def sacar(saldo_conta, saldo_banco, saldo_a_sacar):
         print(f'Seu saldo atual é de {saldo_conta}')
     return saldo_conta
 
-def extrato(saldo_conta):
+def imprimir_extrato(saldo_conta):
     print(f"Seu saldo atual é de {saldo_conta}\n")
 
 def novo_usuario(usuarios):
@@ -82,7 +79,7 @@ def lista_contas(contas):
                     Titular: {conta['usuario']['nome']}
                 """
         print("=" * 100)
-        print( textwrap.dedent(linha))
+        print( linha )
 
 def sair():
     print("==== Encerrado a cessão. Até mais tarde! ====")
@@ -92,7 +89,6 @@ def main():
 
     saldo_conta = 0
     saldo_banco = 200
-    extrato = ""
     saldo_a_sacar = 0
     usuarios = []
     contas = []
@@ -113,7 +109,7 @@ def main():
         elif opcao == 2: 
             saldo_conta = sacar(saldo_conta, saldo_banco, saldo_a_sacar)
         elif opcao == 3: 
-            extrato(saldo_conta)
+            imprimir_extrato(saldo_conta)
         elif opcao == 4:
             novo_usuario(usuarios)
         elif opcao == 5:
@@ -131,5 +127,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
     
